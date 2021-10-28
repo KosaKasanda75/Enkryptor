@@ -35,7 +35,7 @@ public class EnKryptor {
 		//}
 		
 		//Encryption
-		delta = 0xAAAA + key[0];
+		delta = 0x0607 + key[0];
 		sum = 0;
 		for (int x=0; x<userlen+user_remain; x++) {
 			userEncrypt[x] = (((userEncrypt[x]-32) + ((userEncrypt[x+4]>>>4 ^ key[sum%EnKryptor3_1GUI.KEYS_NUM])%10)) %96) + 32;
@@ -78,7 +78,7 @@ public class EnKryptor {
 		//}
 		
 		//Decryption
-		delta = 0xAAAA + key[0];
+		delta = 0x0607 + key[0];
 		sum = 0;
 		for (int x=0; x<userlen+user_remain; x++) {
 			userDecrypt[x+4] -= 32;
